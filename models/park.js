@@ -24,5 +24,15 @@ Park.prototype.findMostPopular = function() {
     return mostPopular;
 }
 
+Park.prototype.sameSpecies = function(dinosaur) {
+    let count = 0;
+    for(var obj of this.collection) {
+        if (obj.species === dinosaur.species){
+            count += 1;
+        }
+    }
+    return count;
+}
+
 
 module.exports = Park
