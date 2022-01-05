@@ -50,5 +50,15 @@ Park.prototype.annualRevenue = function() {
     return this.annualVisitorCount() * this.ticketPrice;
 }
 
+Park.prototype.removeSpecies = function(dinosaur) {
+    let newCollection = [];
+    for(var obj of this.collection) {
+        if(obj.species !== dinosaur.species) {
+            newCollection.push(obj);
+        }
+    }
+    this.collection = newCollection;
+}
+
 
 module.exports = Park

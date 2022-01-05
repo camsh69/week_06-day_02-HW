@@ -79,4 +79,13 @@ describe('Park', function() {
     assert.strictEqual(actual, 4562500)
   });
 
+  it('should remove all dinosaurs of a particular species', function() {
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    park.removeSpecies(dinosaur1);
+    const actual = park.collection.length;
+    assert.strictEqual(actual, 1);
+  })
+
 });
