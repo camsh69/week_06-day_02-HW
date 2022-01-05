@@ -60,5 +60,22 @@ Park.prototype.removeSpecies = function(dinosaur) {
     this.collection = newCollection;
 }
 
+Park.prototype.dietType = function() {
+    let dietType = {};
+    let carnivoreCount = 0;
+    let herbivoreCount = 0;
+    let omnivoreCount = 0;
+    for (var dinosaur of this.collection) {
+       if (dinosaur.diet === 'carnivore') {
+            carnivoreCount += 1;
+       } else if (dinosaur.diet === 'herbivore') {
+           herbivoreCount += 1;
+       } else {
+           omnivoreCount += 1;
+       }
+    }
+    return dietType = {'carnivore': carnivoreCount, 'herbivore': herbivoreCount, 'omnivore': omnivoreCount }
+}
+
 
 module.exports = Park

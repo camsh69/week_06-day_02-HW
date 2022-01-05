@@ -7,6 +7,7 @@ describe('Park', function() {
   let park;
   let dinosaur1;
   let dinosaur2;
+  let dinosaur3;
 
   beforeEach(function () {
     park = new Park('Jurassic', 250);
@@ -86,6 +87,15 @@ describe('Park', function() {
     park.removeSpecies(dinosaur1);
     const actual = park.collection.length;
     assert.strictEqual(actual, 1);
-  })
+  });
+
+  it('should return an object with diet types and number of dinosaurs', function() {
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    const actual = park.dietType();
+    assert.deepStrictEqual(actual, { carnivore: 2, herbivore: 1, omnivore: 1 })
+  });
 
 });
