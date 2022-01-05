@@ -42,5 +42,13 @@ Park.prototype.visitorCount = function() {
     return count;
 }
 
+Park.prototype.annualVisitorCount = function() {
+    return (this.visitorCount())*365;
+}
+
+Park.prototype.annualRevenue = function() {
+    return this.annualVisitorCount() * this.ticketPrice;
+}
+
 
 module.exports = Park
